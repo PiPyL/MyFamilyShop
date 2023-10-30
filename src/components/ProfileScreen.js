@@ -1,11 +1,8 @@
 import { Col, Row } from "antd";
-import "./App.css";
+import "../App.css";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-function App() {
+function ProfileScreen() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const navigate = useNavigate();
 
   const products = [
     { id: 1, name: "Sản phẩm 1", price: 100, description: "Mô tả sản phẩm 1" },
@@ -36,7 +33,7 @@ function App() {
     <div style={{ flex: 1 }}>
       <div>
         <div style={{ justifyContent: "center" }}>
-          <h1 style={{ textAlign: "center" }}>Danh sách sản phẩm</h1>
+          <h1 style={{ textAlign: "center" }}>Tài khoản</h1>
         </div>
         <Row style={{ paddingLeft: 12, paddingTop: 12 }}>
           {products.map((e) => (
@@ -52,12 +49,10 @@ function App() {
                 boxShadow: "0px 0px 5px gray",
                 background: "white",
               }}
-              onClick={() => {
-                navigate("profile");
-              }}
+              onClick={() => console.log(e)}
             >
               <img
-                src={require("./assets/a.png")}
+                src={require("../assets/a.png")}
                 style={{ height: 100, width: 100, objectFit: "cover" }}
               />
               <Col style={{ marginLeft: 12 }}>
@@ -73,4 +68,4 @@ function App() {
   );
 }
 
-export default App;
+export default ProfileScreen;
